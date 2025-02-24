@@ -2,56 +2,62 @@
 Course: INFT 2202-10
 Group: 5
 Instructor: Sergio Santilli
-Date Started: Febuary 21, 2025
-Date Ended: Febuary 23, 2025
+Date Started: February 21, 2025
+Date Ended: February 23, 2025
 Names: Mohammed Aasim, Ashar Asad
 File: news.js
-Description: Fetches and displays real-time volunteer-related news using News API.
+Description: Fetches and displays news articles related to volunteering using the NewsAPI.
 */
 
-// Ensure the DOM is loaded before fetching news
 document.addEventListener("DOMContentLoaded", () => {
     fetchNews();
 });
 
-// Function to fetch and display news articles
+// Function to fetch news articles from the News API
 async function fetchNews() {
     const newsContainer = document.getElementById("newsContainer");
-    newsContainer.innerHTML = "<p class='text-center'>Fetching latest news...</p>";
-
-    const apiKey = "ffe40c27488c48b9b23c667194158fef"; // Your API Key
-    const url = `https://newsapi.org/v2/everything?q=volunteer&apiKey=${apiKey}`;
+    newsContainer.innerHTML = "<p>Loading news...</p>"; // Display loading message
 
     try {
-        const response = await fetch(url);
+        // Fetch news articles from NewsAPI with security headers
+        const response = await fetch("https://newsapi.org/v2/everything?q=volunteer&apiKey=ffe40c27488c48b9b23c667194158fef", {
+            headers: {
+                "Content-Type": "application/json",
+                "Upgrade-Insecure-Requests": "1"
+            }
+        });
+
+        // If response is not OK, throw an error
+        if (!response.ok) {
+            throw new Error(`HTTP Error! Status: ${response.status}`);
+        }
+
+        // Parse response data as JSON
         const data = await response.json();
 
-        if (data.status === "ok" && data.articles.length > 0) {
-            newsContainer.innerHTML = ""; // Clear the loading text
-
-// Display the first 5 news articles
-            data.articles.slice(0, 5).forEach(article => {
-                const newsItem = document.createElement("div");
-                newsItem.classList.add("col-md-6", "mb-4");
-
-                newsItem.innerHTML = `
-<div class="card">
-    <img src="${article.urlToImage || 'images/news-placeholder.jpg'}" class="card-img-top" alt="News Image">
-    <div class="card-body">
-        <h5 class="card-title">${article.title}</h5>
-        <p class="card-text">${article.description || "No description available."}</p>
-        <a href="${article.url}" target="_blank" class="btn btn-primary">Read More</a>
-    </div>
-</div>
-`;
-
-                newsContainer.appendChild(newsItem);
-            });
-        } else {
-            newsContainer.innerHTML = "<p class='text-center'>No news articles found.</p>";
+        // If no articles are found, display a message
+        if (!data.articles || data.articles.length === 0) {
+            newsContainer.innerHTML = "<p>No news articles found.</p>";
+            return;
         }
+
+        newsContainer.innerHTML = ""; // Clear loading message
+
+        // Display the first 5 news articles
+        data.articles.slice(0, 5).forEach(article => {
+            const newsItem = document.createElement("div");
+            newsItem.classList.add("news-item");
+            newsItem.innerHTML = `
+                <h3>${article.title}</h3>
+                <p>${article.description || "No description available."}</p>
+                <a href="${article.url}" target="_blank">Read more</a>
+            `;
+            newsContainer.appendChild(newsItem);
+        });
+
     } catch (error) {
+        // Display error message if the API call fails
+        newsContainer.innerHTML = `<p>Error fetching news: ${error.message}</p>`;
         console.error("Error fetching news:", error);
-        newsContainer.innerHTML = "<p class='text-center text-danger'>Failed to load news. Please try again later.</p>";
     }
 }
