@@ -1,0 +1,146 @@
+<!--
+Course: INFT 2202-10
+Group: 5
+Instructor: Sergio Santilli
+Date Started: Febuary 21, 2025
+Date Ended: Febuary 23, 2025
+Names: Mohammed Aasim, Ashar Asad
+File: index.html
+Description: Homepage for Volunteer Connect featuring a carousel, mission statement, search bar, authentication system, and navigation improvements.
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Volunteer Connect</title>
+
+
+    <link rel="stylesheet" href="Assignment2-Group5/css/style.css">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+</head>
+<body>
+
+<!-- Navigation Bar -->
+<nav class="navbar navbar-expand-lg bg-primary navbar-dark">
+    <div class="container-fluid">
+        <a class="navbar-brand" href="#">Volunteer Connect</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav me-auto">
+                <!-- Login/Logout Link -->
+                <li class="nav-item">
+                    <a class="nav-link" href="#" data-bs-toggle="modal" data-bs-target="#loginModal" id="authLink">Log In</a>
+                </li>
+                <li class="nav-item"><a class="nav-link active" href="index.html">Home</a></li>
+                <li class="nav-item"><a class="nav-link" href="opportunities.html">Volunteer Now</a></li>
+                <li class="nav-item"><a class="nav-link" href="events.html">Events</a></li>
+                <li class="nav-item"><a class="nav-link" href="contact.html">Contact Us</a></li>
+                <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
+                <li class="nav-item"><a class="nav-link" href="careers.html">Careers</a></li>
+                <li class="nav-item"><a class="nav-link" href="news.html">News</a></li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="moreDropdown" role="button" data-bs-toggle="dropdown">
+                        More
+                    </a>
+                    <ul class="dropdown-menu">
+                        <li><a class="dropdown-item" href="gallery.html">Gallery</a></li>
+                        <li><a class="dropdown-item" href="terms.html">Terms of Service</a></li>
+                        <li><a class="dropdown-item" href="privacy.html">Privacy Policy</a></li>
+                    </ul>
+                </li>
+
+            </ul>
+
+            <!-- Search Bar -->
+            <form class="d-flex" id="searchForm">
+                <input class="form-control me-2" type="search" placeholder="Search events, news..." id="searchInput">
+                <button class="btn btn-outline-light" type="submit">Search</button>
+            </form>
+        </div>
+    </div>
+</nav>
+
+<!-- Carousel Section -->
+<header>
+    <div id="carouselExample" class="carousel slide" data-bs-ride="carousel">
+        <div class="carousel-inner">
+
+            <div class="carousel-item active">
+                <img src="images/carousel1.png" class="d-block w-100" alt="Volunteer Activity 1" height="400">
+            </div>
+
+            <div class="carousel-item">
+                <img src="images/carousel2.png" class="d-block w-100" alt="Volunteer Activity 2" height="400">
+            </div>
+
+            <div class="carousel-item">
+                <img src="images/carousel3.png" class="d-block w-100" alt="Volunteer Activity 3" height="400">
+            </div>
+        </div>
+
+        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExample" data-bs-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Previous</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#carouselExample" data-bs-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Next</span>
+        </button>
+    </div>
+</header>
+
+
+<!-- Main Content -->
+<main class="container mt-4">
+    <h1>Welcome to Volunteer Connect</h1>
+    <p>At Volunteer Connect, we aim to bridge the gap between passionate individuals and impactful organizations. Our mission is to foster meaningful connections that empower communities and inspire change.</p>
+    <button class="btn btn-primary mt-4" onclick="window.location.href='opportunities.html'">Get Involved</button>
+</main>
+
+<!-- Footer -->
+<footer class="bg-light text-center py-3 mt-4">
+    <p>&copy; 2025 Volunteer Connect. All Rights Reserved.</p>
+</footer>
+
+<!-- Login Modal -->
+<div class="modal fade" id="loginModal" tabindex="-1" aria-labelledby="loginModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="loginModalLabel">User Login</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <form id="loginForm">
+                    <div class="mb-3">
+                        <label for="username" class="form-label">Username</label>
+                        <input type="text" class="form-control" id="username" required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="password" class="form-label">Password</label>
+                        <input type="password" class="form-control" id="password" required>
+                    </div>
+                    <button type="submit" class="btn btn-primary">Log In</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<!-- JavaScript Files -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+<script src="js/index.js"></script>
+<script src="js/search.js"></script>
+<script src="js/auth.js"></script>
+
+
+</body>
+</html>

@@ -1,0 +1,37 @@
+[
+  {
+    "title": "Fundraising Gala",
+    "description": "Raise funds for community projects.",
+    "date": "2025-03-10",
+    "category": "fundraiser",
+    "image": "event-fundraiser.png"
+  },
+  {
+    "title": "Digital Skills Workshop",
+    "description": "Improve your digital skills.",
+    "date": "2025-04-05",
+    "category": "workshop",
+    "image": "event-workshop.png"
+  },
+  {
+    "title": "Park Cleanup",
+    "description": "Join us in cleaning the park.",
+    "date": "2025-05-20",
+    "category": "cleanup",
+    "image": "event-cleanup.png"
+  },
+  {
+    "title": "Beach Cleanup",
+    "description": "Help clean up the beach.",
+    "date": "2025-06-15",
+    "category": "cleanup",
+    "image": "beach-cleanup.png"
+  },
+  {
+    "title": "Animal Shelter Fundraiser",
+    "description": "Support local animal shelters.",
+    "date": "2025-07-10",
+    "category": "fundraiser",
+    "image": "animal-fundraiser.png"
+  }
+]
