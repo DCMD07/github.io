@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Contact</title>
+    <!--Including CSS -->
+    <link rel="stylesheet" href="./node_modules/bootstrap/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="./node_modules/@fortawesome/fontawesome-free/css/all.css">
+    <link rel="stylesheet" href="./content/app.css">
+</head>
+
+<header>
+    <nav class="navbar navbar-expand-lg bg-body-tertiary">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="index.html"><i class="fa-solid fa-hippo"></i> INFT2202</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                    aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html"><i class="fa-solid fa-house"></i> Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="products.html"><i class="fa-solid fa-shield-cat"></i> Products</a>
+                    <li class="nav-item">
+                        <a class="nav-link" href="services.html"><i class="fa-solid fa-sign-hanging"></i> Services</a>
+                    <li class="nav-item">
+                        <a class="nav-link" href="about.html"><i class="fa-solid fa-circle-info"></i> About</a>
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="contact.html"><i
+                                class="fa-solid fa-envelope"></i> Contact</a>
+                </ul>
+            </div>
+        </div>
+    </nav>
+</header>
+<body>
+
+<main class="container">
+    <h1 class="mb-5">Contact Us</h1>
+    <form class="col-lg-6 col-md-10 col-sm-12 mb-4">
+
+        <div class="input-group mb-3">
+            <span class="input-group-text">Full Name</span>
+            <input id="fullName" name="fullName" type="text" class="form-control"
+                   aria-describedby="Full Name" aria-label="Full Name" required>
+        </div>
+
+        <div class="input-group mb-3">
+            <span class="input-group-text">Contact Number</span>
+            <input id="contactNumber" name="contactNumber" type="tel" class="form-control"
+                   aria-describedby="Contact Number" aria-label="Contact Number" required>
+        </div>
+
+        <div class="input-group mb-3">
+            <span class="input-group-text">Email Address</span>
+            <input id="emailAddress" name="emailAddress" type="email" class="form-control"
+                   aria-describedby="Email Address" aria-label="Email Address" required>
+        </div>
+
+        <div class="input-group mb-3">
+            <span class="input-group-text">Message</span>
+            <textarea id="message" name="message" type="text" class="form-control"
+                      aria-describedby="Message" aria-label="Message" required> </textarea>
+        </div>
+
+        <div class="mb-3 form-check">
+            <input id="subscribeCheckBox" name="subscribeCheckBox" type="checkbox" class=form-check-input">
+            <label class="form-check-label" for="subscribeCheckBox">Subscribe to our Contact List</label>
+        </div>
+        <button id="sendButton" type="submit" class="btn btn-primary"><i class="fa-solid fa-envelope"></i>Submit
+        </button>
+        <button id="cancelButton" type="reset" class="btn btn-warning"><i class="fa-solid fa-rotate"></i>Cancel</button>
+    </form>
+    <div class="col-lg-4 col-md-6">
+        <a href="contact-list.html" class="btn btn-outline-primary mt-4"><i class="fa-solid fa-users"></i>Show Contact
+            List</a>
+    </div>
+</main>
+
+
+<!-- Including Scripts-->
+<script src="./scripts/app.js"></script>
+<script src="./node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
+<script src="./scripts/contact.js"></script>
+</body>
+</html>
