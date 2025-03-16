@@ -1,0 +1,1 @@
+{"root":["./scripts/app.ts","./scripts/authguard.ts","./scripts/contact.ts","./scripts/footer.ts","./scripts/header.ts","./scripts/namespace.ts","./scripts/router.ts","./scripts/user.ts"],"version":"5.8.2"}

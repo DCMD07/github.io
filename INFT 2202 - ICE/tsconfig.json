@@ -1,0 +1,19 @@
+{
+  "compilerOptions": {
+    "target": "esNext",
+    "module": "esNext",
+    "moduleResolution": "node",
+    "outDir": "./dist",
+    "rootDir": "./scripts",
+    "allowJs": true,
+    "strict": true,
+    "skipLibCheck": true,
+    "sourceMap": true
+  },
+  "include": [
+    "week9/day2/scripts/**/*.ts"
+  ],
+  "exclude": [
+    "node_modules"
+  ]
+}

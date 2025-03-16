@@ -90,31 +90,25 @@ export class Contact {
                 Email Address: ${this._emailAddress}`;
     }
 
-    /**
-     * Serialize the contact details into a string format suitable for storage
-     * @returns {string|null}
-     */
-    serialize():string|null{
-        if(!this._fullName || !this._contactNumber || !this._emailAddress) {
-            console.error("One or more of the contact properties are missing or invalid")
+    serialize(): string | null {
+        if (!this._fullName || !this._contactNumber || !this._emailAddress) {
+            console.error("❌ One or more of the contact properties are missing or invalid.");
             return null;
         }
-        return `${this._fullName},${this._contactNumber},${this._emailAddress}`;
+        return JSON.stringify({
+            fullName: this._fullName,
+            contactNumber: this._contactNumber,
+            emailAddress: this._emailAddress
+        });
     }
 
-    /**
-     * Deserializes a string of contact details and updates the contact properties
-     * @param data
-     */
-    deserialize(data:string){
-        if(data.split(",").length !== 3){
-            console.error("Invalid data format for deserialization");
-            return;
+    deserialize(data: string) {
+        try {
+            const obj = JSON.parse(data);
+            this._fullName = obj.fullName;
+            this._contactNumber = obj.contactNumber;
+            this._emailAddress = obj.emailAddress;
+        } catch (error) {
+            console.error("❌ Failed to deserialize contact data", error);
         }
-
-        const propArray = data.split(",");
-        this._fullName = propArray[0];
-        this._contactNumber = propArray[1];
-        this._emailAddress = propArray[2];
-    }
-}
+    }}
