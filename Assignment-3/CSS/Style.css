@@ -1,0 +1,54 @@
+/*
+Course: INFT 2202-10
+Group: 5
+Instructor: Sergio Santilli
+Date Started: January 22, 2025
+Date Ended: January 24, 2025
+Names: Mohammed Aasim, Ashar Asad
+File: style.css
+Description: Provides styles for the Volunteer Connect platform, including navbar, search bar, login UI, and feedback form.
+*/
+
+
+
+/* Navbar */
+.navbar {
+    background-color: #0056b3;
+    padding: 10px 20px;
+}
+
+.nav-link {
+    color: white !important;
+}
+
+.nav-link:hover {
+    color: #ffcc00 !important;
+}
+
+/* Search Bar */
+#searchForm {
+    display: flex;
+    align-items: center;
+}
+
+#searchInput {
+    width: 200px;
+}
+
+/* Login/Logout */
+#authLink {
+    font-weight: bold;
+    cursor: pointer;
+}
+
+/* Feedback Form */
+#contact-form {
+    max-width: 600px;
+    margin: auto;
+}
+
+#confirmationModal .modal-body {
+    text-align: center;
+    font-size: 1.2em;
+}
+

@@ -1,0 +1,12 @@
+{
+  "visitors": {
+    "Jan": 100,
+    "Feb": 150,
+    "Mar": 200
+  },
+  "deviceUsage": {
+    "Mobile": 60,
+    "Desktop": 30,
+    "Tablet": 10
+  }
+}
